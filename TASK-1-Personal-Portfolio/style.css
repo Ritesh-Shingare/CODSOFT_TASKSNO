@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(4, 4, 68);
+  color: white;
+  font-family: "Scoutie Sans";
+}
+nav {
+  background-color: rgb(12, 12, 93);
+  height: 80px;
+  align-items: center;
+  justify-content: space-around;
+  display: flex;
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+}
+nav ul li {
+  list-style: none;
+  margin: 0 20px;
+}
+nav ul li a {
+  margin: 0 20px;
+  text-decoration: none;
+  color: white;
+}
+nav ul li a:hover {
+  color: rgb(120, 120, 225);
+  text-decoration: underline;
+}
+.left {
+  font-size: 1.5rem;
+}
+
+
+
+
+.firstSection {
+  display: flex;
+  align-items: center;
+  margin: 80px auto;
+  justify-content: space-around;
+  max-width: 1200px;
+  min-height: 60vh;
+}
+
+.firstSection > div.leftSection {
+  width: 40%;
+}
+
+.rightSection {
+  width: 40%;
+}
+
+.rightSection img {
+  width: 80%;
+  display: block;
+  margin: auto;
+}
+.purple {
+  color: rgb(97, 25, 164);
+}
+.text-gray {
+  color: rgb(120, 120, 225);
+}
+.leftSection {
+  font-size: 3rem;
+}
+.aboutImage img {
+  width: 80%;
+}
+
+.secondSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: auto;
+  max-width: 90vw;
+}
+
+main hr {
+  border: 0;
+  background-color: rgb(12, 12, 93);
+  height: 1px;
+  margin: 40px 80px;
+}
+
+/* footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: rgb(12, 12, 93);
+  color: white;
+  height: 255px;
+  margin-top: 23px;
+  display: block;
+}
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  background-color: rgb(12, 12, 93);
+  padding: 20px;
+}
+footer div {
+  width: 223px;
+}
+
+
+/* buttons */
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.hero-buttons .btn {
+  display: inline-block;
+  background-color: rgb(21, 21, 100);
+  color: white;
+  padding: 12px 20px;
+  font-size: 18px;
+  text-decoration: none;
+  border: 1px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.hero-buttons .btn:hover {
+  background-color: rgb(97, 25, 164);
+  transform: translateY(-2px);
+
+}
