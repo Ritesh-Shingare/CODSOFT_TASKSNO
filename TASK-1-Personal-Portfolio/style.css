@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -8,8 +9,6 @@ body {
   color: white;
   font-family: "Scoutie Sans";
 }
-
-
 
 /* nav */
 nav {
@@ -29,7 +28,7 @@ nav ul li {
 nav ul li a {
   text-decoration: none;
   color: white;
-  transition: 03.s ease;
+  transition: 0.3s ease;
 }
 nav ul li a:hover {
   color: rgb(120, 120, 225);
@@ -39,9 +38,6 @@ nav ul li a:hover {
   font-size: 1.6rem;
   font-weight: 700;
 }
-
-
-
 
 .firstSection {
   display: flex;
@@ -78,8 +74,6 @@ nav ul li a:hover {
   width: 80%;
 }
 
-
-
 /* about */
 .secondSection {
   display: flex;
@@ -107,10 +101,8 @@ nav ul li a:hover {
 }
 .aboutContent p {
   font-size: 1.1rem;
-  line-height: 1.7;  /*distance between line */
+  line-height: 1.7; /*distance between line */
 }
-
-
 
 /* skills */
 .skills-container {
@@ -154,7 +146,6 @@ nav ul li a:hover {
   transform: translateY(-5px);
   border-color: white;
 }
-
 
 /* project */
 .projects-container {
@@ -220,8 +211,6 @@ nav ul li a:hover {
   display: flex;
   gap: 15px;
 }
-
-
 
 /* contact */
 .contact-section {
@@ -302,9 +291,8 @@ main hr {
 /* footer */
 .site-footer {
   background-color: rgb(12, 12, 93);
-  margin: 80px;
+  margin-top: 80px;
   padding-top: 50px;
-  padding: 255px;
 }
 .footer-container {
   max-width: 1200px;
@@ -382,5 +370,89 @@ main hr {
   background-color: rgb(97, 25, 164);
 
   transform: translateY(-2px);
+}
 
+@media (max-width: 765px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  nav {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+    gap: 15px;
+  }
+  nav ul {
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
+  .firstSection {
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
+  .firstSection > div.leftSection,
+  .rightSection {
+    width: 90%;
+  }
+  .leftSection {
+    font-size: 2rem;
+  }
+  .rightSection img {
+  width: 70%;
+}
+  .hero-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .secondSection {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .aboutImage,
+  .aboutContent {
+    width: 90%;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-cards {
+    grid-template-columns: 1fr;
+  }
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 30px;
+    padding: 30px 20px 25px;
+  }
+  .footer-brand,.footer-column {
+    width: 100%;
+    max-width: none;
+  }
+  .site-footer {
+    margin-top: 40px;
+    padding-top: 20px;
+
+  }
+  .skills-container,
+  .projects-container,
+  .contact-section {
+    padding: 0 20px;
+  }
+
+  .firstSection,
+  .secondSection,
+  .skills-container,
+  .projects-container,
+  .contact-section {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
 }
