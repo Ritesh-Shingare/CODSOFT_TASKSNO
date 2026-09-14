@@ -36,6 +36,9 @@ nav ul li a:hover {
   color: rgb(120, 120, 225);
 }
 
+
+
+
 .left {
   font-size: 1.6rem;
   font-weight: 700;
@@ -374,20 +377,49 @@ main hr {
   transform: translateY(-2px);
 }
 
+
+.menu-toggle {
+  display: block;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+
 @media (max-width: 765px) {
+  .menu-toggle {
+    display: block;
+  }
+  nav .right {
+    display: none;
+  }
+  nav .right.active {
+    display: block;
+    flex-basis: 100%;
+    width: 100%;
+  }
+
   .skills-grid {
     grid-template-columns: 1fr;
   }
   nav {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     height: auto;
     padding: 20px;
-    gap: 15px;
+    gap: 0;
+    justify-content: space-between;
+    align-items: center;
   }
   nav ul {
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 15px;
-    justify-content: center;
+    align-items: center;
   }
   .firstSection {
     flex-wrap: wrap;
