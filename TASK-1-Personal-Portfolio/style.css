@@ -285,6 +285,60 @@ nav ul li a:hover {
 .contact-btn {
   margin-top: 10px;
 }
+.contact-form {
+  max-width: 650px;
+  margin: 40px auto 0;
+  text-align: left;
+}
+.contact-form .btn {
+  display: block;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+.form-group input,textarea {
+  width: 100%;
+  padding: 12px;
+  background-color: rgb(12, 12, 12);
+  color: white ;
+  border-radius: 5px;
+  border: 1px solid rgb(12, 12, 225);
+  font-family: inherit;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+.form-group textarea {
+  resize: vertical;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: white;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+color: rgb(180, 180, 200);
+}
+.error-message {
+  display: block;
+  color: rgb(255, 120, 120);
+  margin-top: 5px;
+  min-height: 18px;
+}
+#form-status {
+  margin-top: 15px;
+  text-align: center;
+}
+
+
 
 main hr {
   border: 0;
