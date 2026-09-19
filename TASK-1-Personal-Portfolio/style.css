@@ -457,6 +457,27 @@ main hr {
   border-radius: 5px;
 }
 
+/* scroll to top  */
+#scrollTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 45px;
+  height: 45px;
+  border: 1px solid white;
+  border-radius: 50%;
+  background-color: rgb(21, 21, 100);
+  color: white;
+  font-size: 1.4rem;
+  cursor: pointer;
+  z-index: 1000;
+}
+#scrollTopBtn:hover {
+  background-color: rgb(97, 25, 164);
+  transform: translateY(-3px);
+}
+
 
 @media (max-width: 768px) {
   .menu-toggle {
