@@ -57,3 +57,8 @@ body {
     max-width: 100%;
     height: auto;
 }
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
