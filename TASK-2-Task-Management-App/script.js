@@ -6,7 +6,6 @@ taskForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
     const taskText = taskInput.value.trim();
-    console.log(taskText);
     
     if (taskText === "") {
         return;
@@ -16,6 +15,17 @@ taskForm.addEventListener("submit", function (event) {
 
     const taskTextElement = document.createElement("span");
     taskTextElement.textContent = taskText;
+
+    const editButton = document.querySelector("button");
+    editButton.textContent = "✏️";
+
+    editButton.addEventListener("click", function () {
+        const updateTask = prompt("edit your task:", taskTextElement.textContent);
+
+        if  (updateTask !==null && updateTask.trim() !== "") {
+            taskTextElement.textContent = updateTask.trim();
+        }
+    });
 
     const completeButton = document.createElement("button")
     completeButton.textContent = "✓";
@@ -32,6 +42,7 @@ taskForm.addEventListener("submit", function (event) {
     })
 
     taskItem.appendChild(taskTextElement);
+    taskItem.appendChild(editButton);
     taskItem.appendChild(completeButton);
     taskItem.appendChild(deleteButton);
 
