@@ -235,4 +235,45 @@ body {
     .empty-image {
         width: 80%;
     }
+
+    .task-stats {
+        gap: 7px;
+    }
+    .stat-item {
+        padding: 10px 5px;
+    }
+    .stat-item span {
+        font-size: 20px;
+    }
+    .stat-item small {
+        font-size: 12px;
+    }
+}
+
+.task-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+}
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 8px;
+    border-radius: 12px;
+    background: rgba(255, 248, 235, 0.55);
+    border: 1px solid rgba(80, 50, 20, 0.15);
+}
+.stat-item span {
+    font-size: 24px;
+    font-weight: 700;
+    color: #3b2715;
+}
+.stat-item small {
+    color: #6f4828;
+    font-weight: 600;
+    font-size: 13px;
+    margin-top: 3px;
 }

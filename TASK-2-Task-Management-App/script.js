@@ -1,3 +1,6 @@
+const totalCount = document.querySelector("#total-count");
+const pendingCount = document.querySelector("#pending-count");
+const completedCount = document.querySelector("#completed-count");
 const emptyImage = document.querySelector(".empty-image");
 const taskForm = document.querySelector(".input-area");
 const taskInput = document.querySelector("#task-input");
@@ -23,9 +26,28 @@ function loadTasks() {
 }
 loadTasks();
 
+function updateTaskStats() {
+    const total = tasks.length;
+
+    const completed = tasks.filter(function (task) {
+        return task.completed;
+    }).length;
+
+    const pending = tasks.filter(function (task) {
+        return !task.completed;
+    }).length;
+
+    totalCount.textContent = total;
+    pendingCount.textContent = pending;
+    completedCount.textContent = completed; 
+}
+
 function renderTasks() {
+    updateTaskStats();
+    
     taskList.innerHTML = "";
     emptyImage.style.display = "none";
+    
 
     const filteredTasks = tasks.filter(function (task) {
 
