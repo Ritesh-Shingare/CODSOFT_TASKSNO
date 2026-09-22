@@ -1,8 +1,10 @@
 const taskForm = document.querySelector(".input-area");
 const taskInput = document.querySelector("#task-input");
 const taskList = document.querySelector("#task-list");
+const searchInput = document.querySelector("#search-input");
 
 let tasks = [];
+let searchTerm = "";
 
 function saveTasks() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
@@ -21,7 +23,18 @@ loadTasks();
 function renderTasks() {
     taskList.innerHTML = "";
 
-    tasks.forEach(function (task) {
+    const filteredTasks = tasks.filter(function (task) {
+        return task.text.toLowerCase().includes(searchTerm);
+    });
+    if (filteredTasks.length === 0) {
+        const noTaskMessage = document.createElement("li");
+        noTaskMessage.textContent = "No tasks found";
+        noTaskMessage.classList.add("no-tasks");
+        taskList.appendChild(noTaskMessage);
+        return;
+    }
+
+    filteredTasks.forEach(function (task) {
         const taskItem = document.createElement("li");
 
         const taskTextElement = document.createElement("span");
@@ -91,4 +104,10 @@ taskForm.addEventListener("submit", function (event) {
     renderTasks();
 
     taskInput.value = "";
+});
+
+searchInput.addEventListener("input", function () {
+    searchTerm = searchInput.value.trim().toLowerCase();
+
+    renderTasks();
 });
