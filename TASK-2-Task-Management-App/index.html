@@ -16,7 +16,8 @@
   <body>
     <div class="container">
       <div class="todo-app">
-        <h1>To-Do App</h1>
+        <h1>TaskFlow</h1>
+        <p class="app-subtitle">Organise your tasks. Stay productive.</p>
         <form class="input-area">
           <input
             type="text"
@@ -36,8 +37,13 @@
            >
         </div>
         <div class="todos-container">
+          <div class="task-filters">
+            <button type="button" class="filter-btn active" data-filter="all">ALL</button>
+            <button type="button" class="filter-btn" data-filter="pending">Pending</button>
+            <button type="button" class="filter-btn" data-filter="completed">Completed</button>
+          </div>
           <ul id="task-list"></ul>
-          <img class="empty-image" src="images/todo.png" alt="empty image" />
+          <img class="empty-image" src="images/no-tasks.png" alt="No tasks found" />
         </div>
       </div>
     </div>

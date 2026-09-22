@@ -1,10 +1,13 @@
+const emptyImage = document.querySelector(".empty-image");
 const taskForm = document.querySelector(".input-area");
 const taskInput = document.querySelector("#task-input");
 const taskList = document.querySelector("#task-list");
 const searchInput = document.querySelector("#search-input");
+const filterButtons = document.querySelectorAll(".filter-btn");
 
 let tasks = [];
 let searchTerm = "";
+let currentFilter = "all";
 
 function saveTasks() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
@@ -22,15 +25,21 @@ loadTasks();
 
 function renderTasks() {
     taskList.innerHTML = "";
+    emptyImage.style.display = "none";
 
     const filteredTasks = tasks.filter(function (task) {
-        return task.text.toLowerCase().includes(searchTerm);
+
+        const matchesSearch = task.text.toLowerCase().includes(searchTerm);
+
+        const matchesFilter = 
+            currentFilter === "all" ||
+            (currentFilter === "pending" && !task.completed) ||
+            (currentFilter === "completed" && task.completed);
+        
+        return matchesSearch && matchesFilter;
     });
     if (filteredTasks.length === 0) {
-        const noTaskMessage = document.createElement("li");
-        noTaskMessage.textContent = "No tasks found";
-        noTaskMessage.classList.add("no-tasks");
-        taskList.appendChild(noTaskMessage);
+        emptyImage.style.display = "block";
         return;
     }
 
@@ -44,7 +53,7 @@ function renderTasks() {
         }
 
         const editButton = document.createElement("button");
-        editButton.textContent = "✏️";
+        editButton.innerHTML = '<i class="fa-solid fa-pencil"></i>';
         editButton.addEventListener("click", function () {
             const updateTask = prompt("Edit your task...", task.text);
         
@@ -57,7 +66,7 @@ function renderTasks() {
     });
 
         const completeButton = document.createElement("button");
-        completeButton.textContent = "✓";
+        completeButton.innerHTML = '<i class="fa-solid fa-check"></i>';
         completeButton.addEventListener("click", function () {
             task.completed = !task.completed;
 
@@ -66,7 +75,7 @@ function renderTasks() {
         });
 
         const deleteButton = document.createElement("button");
-        deleteButton.textContent = "🗑";
+        deleteButton.innerHTML = '<i class="fa-solid fa-trash-can"></i>';
         deleteButton.addEventListener("click", function () {
             tasks = tasks.filter(function (item) {
                 return item.id !== task.id;
@@ -111,3 +120,16 @@ searchInput.addEventListener("input", function () {
 
     renderTasks();
 });
+
+filterButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+        currentFilter = button.dataset.filter;
+
+        filterButtons.forEach(function (btn) {
+            btn.classList.remove("active");
+        });
+        button.classList.add("active");
+
+        renderTasks();
+    });
+    });
