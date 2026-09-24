@@ -25,19 +25,22 @@
             id="task-input"
             placeholder="Add a new task..."
           />
+
+          <select id="task-category">
+            <option value="study">Study</option>
+            <option value="work">Work</option>
+            <option value="personal">Personal</option>
+            <option value="other">Other</option>
+          </select>
+
           <button type="submit" id="add-task-btn">
             <i class="fa-solid fa-plus"></i>
           </button>
         </form>
         <div class="search-area">
-          <input
-           type="text"
-           id="search-input"
-           placeholder="Search tasks..."
-           >
+          <input type="text" id="search-input" placeholder="Search tasks..." />
         </div>
         <div class="todos-container">
-
           <div class="task-stats">
             <div class="stat-item">
               <span id="total-count">0</span>
@@ -51,18 +54,27 @@
 
             <div class="stat-item">
               <span id="completed-count">0</span>
-              <small>Completed</small>            
+              <small>Completed</small>
             </div>
           </div>
 
-
           <div class="task-filters">
-            <button type="button" class="filter-btn active" data-filter="all">ALL</button>
-            <button type="button" class="filter-btn" data-filter="pending">Pending</button>
-            <button type="button" class="filter-btn" data-filter="completed">Completed</button>
+            <button type="button" class="filter-btn active" data-filter="all">
+              ALL
+            </button>
+            <button type="button" class="filter-btn" data-filter="pending">
+              Pending
+            </button>
+            <button type="button" class="filter-btn" data-filter="completed">
+              Completed
+            </button>
           </div>
           <ul id="task-list"></ul>
-          <img class="empty-image" src="images/no-tasks.png" alt="No tasks found" />
+          <img
+            class="empty-image"
+            src="images/no-tasks.png"
+            alt="No tasks found"
+          />
         </div>
       </div>
     </div>
